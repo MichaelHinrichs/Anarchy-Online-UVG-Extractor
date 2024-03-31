@@ -16,7 +16,7 @@ namespace Anarchy_Online_UVG_Extractor
             {
                 var file = uvgi.ReadLine().Split(' ');
                 uvga.BaseStream.Position = int.Parse(file[1]);
-                BinaryWriter bw = new(File.Create(Path.GetDirectoryName(args[0]) + "//" + Path.GetFileNameWithoutExtension(args[0]) + "//" + file[0] + ".png"));
+                BinaryWriter bw = new(File.Create(path + "//" + file[0] + ".png"));
                 bw.Write(uvga.ReadBytes(int.Parse(file[2])));
                 bw.Close();
             }
